@@ -17,7 +17,7 @@ app.use((request, response, next) => {
 });
 
 app.use('/client', clientRouter);
-app.use('/extermintor', exterminatorRouter);
+app.use('/exterminator', exterminatorRouter);
 app.use('/pest', pestRouter);
 
 process.on('unhandledRejection', () => {

@@ -10,9 +10,9 @@ export function getPestById(id: number): Promise<Pest> {
 }
 
 export function savePest(pest: any): Promise<Pest> {
-    const newPest = new Pest(undefined, pest.name);
+    const newPest = new Pest(undefined, pest.pestType);
 
-    if(pest.name) {
+    if(pest.pestType) {
         return pestDao.savePest(newPest);
     }else {
         return new Promise((resolve, reject) => reject(422));
@@ -20,7 +20,7 @@ export function savePest(pest: any): Promise<Pest> {
 }
 
 export function patchPest(input: any): Promise<Pest> {
-    const pest = new Pest(input.id, input.name);
+    const pest = new Pest(input.id, input.pestType);
 
     if(!pest.id) {
         throw new Error('400');

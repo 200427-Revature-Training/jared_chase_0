@@ -1,6 +1,5 @@
 import express from 'express';
 import * as pestService from '../services/pest.service';
-import { request } from 'http';
 
 export const pestRouter = express.Router();
 

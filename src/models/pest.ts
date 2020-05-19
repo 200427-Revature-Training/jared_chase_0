@@ -1,19 +1,19 @@
 export class Pest {
     id: number;
-    name: string;
+    pestType: string;
 
     static from(obj: PestRow): Pest {
-        const pest = new Pest(obj.id, obj.name);
+        const pest = new Pest(obj.id, obj.pest_type);
         return pest;
     }
 
-    constructor(id: number, name: string) {
+    constructor(id: number, pestType: string) {
         this.id = id;
-        this.name = name;
+        this.pestType = pestType;
     }
 }
 
 export interface PestRow {
     id: number;
-    name: string;
+    pest_type: string;
 }
