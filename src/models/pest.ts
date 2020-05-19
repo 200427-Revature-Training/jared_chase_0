@@ -1,4 +1,4 @@
-class Pest {
+export class Pest {
     id: number;
     name: string;
 
