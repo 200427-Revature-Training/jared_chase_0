@@ -1,4 +1,4 @@
-import express, { response } from 'express';
+import express from 'express';
 import * as clientService from '../services/client.service';
 
 export const clientRouter = express.Router();
@@ -20,7 +20,7 @@ clientRouter.get('', (request, response, next) => {
 
 /*
     http://localhost:3000/client/1
-    Retrieves a single person from the database by id
+    Retrieves a single client from the database by id
     If the client does not exist, sends 404
 */
 

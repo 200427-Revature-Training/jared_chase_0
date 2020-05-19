@@ -16,7 +16,8 @@ export function saveClient(client: any): Promise<Client> {
         client.streetAddress, client.phoneNumber, client.emailAddress
     );
 
-    if (client.firstName && client.lastName && client.streetAddress && client.phoneNumber && client.emailAddress) {
+    if (client.firstName && client.lastName && client.streetAddress && 
+        client.phoneNumber && client.emailAddress) {
         return clientDao.saveClient(newClient);
     }else {
         return new Promise((resolve, reject) => reject(422));
@@ -24,7 +25,8 @@ export function saveClient(client: any): Promise<Client> {
 }
 
 export function patchClient(input: any): Promise<Client> {
-    const client = new Client(input.id, input.firstName, input.lastName, input.streetAddress, input.phoneNumber, input.emailAddress);
+    const client = new Client(input.id, input.firstName, input.lastName, 
+        input.streetAddress, input.phoneNumber, input.emailAddress);
 
     if (!client.id) {
         throw new Error('400');

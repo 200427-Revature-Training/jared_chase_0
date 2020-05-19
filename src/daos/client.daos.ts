@@ -3,7 +3,7 @@ import { Client, ClientRow } from '../models/client';
 
 
 export function getAllClients(): Promise<Client[]> {
-    const sql = 'select * from people';
+    const sql = 'select * from client';
     
     return db.query<ClientRow>(sql, []).then(result => {
         const rows: ClientRow[] = result.rows;
@@ -46,8 +46,4 @@ export function patchClient(client: Client): Promise<Client> {
 
     return db.query<ClientRow>(sql, params)
         .then(result => result.rows.map(row => Client.from(row))[0]);
-}
-
-interface Exists {
-    exists: boolean;
 }

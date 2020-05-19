@@ -12,3 +12,8 @@ class Pest {
         this.name = name;
     }
 }
+
+export interface PestRow {
+    id: number;
+    name: string;
+}

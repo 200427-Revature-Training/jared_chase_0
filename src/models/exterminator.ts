@@ -20,3 +20,11 @@ export class Exterminator {
         this.emailAddress = emailAddress;
     }
 }
+
+export interface ExterminatorRow {
+    id: number;
+    first_name: string;
+    last_name: string;
+    phone_number: string;
+    email_address: string;
+}
