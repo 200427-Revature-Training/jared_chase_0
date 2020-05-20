@@ -3,6 +3,7 @@ import { db } from './daos/db';
 import { clientRouter } from './routers/client.router';
 import { exterminatorRouter } from './routers/exterminator.router';
 import { pestRouter } from './routers/pest.router';
+import { appointmentRouter } from './routers/appointment.router';
 import bodyParser from 'body-parser';
 
 const app = express();
@@ -19,6 +20,7 @@ app.use((request, response, next) => {
 app.use('/client', clientRouter);
 app.use('/exterminator', exterminatorRouter);
 app.use('/pest', pestRouter);
+app.use('/appointment', appointmentRouter);
 
 process.on('unhandledRejection', () => {
     db.end().then(() => {
