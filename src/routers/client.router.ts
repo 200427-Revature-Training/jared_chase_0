@@ -48,10 +48,11 @@ clientRouter.get('/:id', (request, response, next) => {
 clientRouter.post('', (request, response, next) => {
     const client = request.body;
     clientService.saveClient(client).then(newClient => {
-        response.sendStatus(201);
+        response.status(201);
         response.json(newClient);
         next();
     }).catch(err => {
+        console.log(err);
         response.sendStatus(500);
         next();
     });

@@ -46,10 +46,11 @@ exterminatorRouter.get('/:id', (request, response, next) => {
 exterminatorRouter.post('', (request, response, next) => {
     const exterminator = request.body;
     exterminatorService.saveExterminator(exterminator).then(newExterminator => {
-        response.sendStatus(201);
+        response.status(201);
         response.json(newExterminator);
         next();
     }).catch(err => {
+        console.log(err);
         response.sendStatus(500);
         next();
     });

@@ -48,10 +48,11 @@ pestRouter.get('/:id', (request, response, next) => {
 pestRouter.post('', (request, response, next) => {
     const pest = request.body;
     pestService.savePest(pest).then(newPest => {
-        response.sendStatus(201);
+        response.status(201);
         response.json(newPest);
         next();
     }).catch(err => {
+        console.log(err);
         response.sendStatus(500);
         next();
     });
